@@ -1,5 +1,6 @@
+@efe
 Feature: Zero Bank Test
-  @efe
+
   Scenario: go to web site and verify
     Given The user should be on the page
     When The user click Sign in button
@@ -11,4 +12,9 @@ Feature: Zero Bank Test
     |Investment Accounts|
     |Credit Accounts|
     |Loan Accounts|
+
+    Then credit accounts table should have following columns
+    |Account|
+    |Credit Card|
+    |Balance|
 

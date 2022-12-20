@@ -8,10 +8,13 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class AccountsummaryPage {
+public class AccountsummaryPage extends BasePage{
 
     @FindBy(xpath = "//h2[@class='board-header']")
     public List<WebElement> accountOptions_loc;
+
+    @FindBy(xpath = "(//table)[3]//th")
+    public List<WebElement> creditAccountColumns_loc;
 
 
     public String  getAccountOptions(String tab){

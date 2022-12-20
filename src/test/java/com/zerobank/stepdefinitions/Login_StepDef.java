@@ -76,13 +76,26 @@ public class Login_StepDef {
     }
 
     @And("User should be able to see account options")
-    public void userShouldBeAbleToSeeAccountOptions(List<String > accounts) {
+    public void userShouldBeAbleToSeeAccountOptions(List<String > expaccounts) {
 
         List<String > actAct=BrowserUtils.getElementsText(accountsummaryPage.accountOptions_loc);
 
 
         System.out.println("actAct = " + actAct);
-        System.out.println("accounts = " + accounts);
+        System.out.println("accounts = " + expaccounts);
+
+        Assert.assertEquals(expaccounts,actAct);
+
+
+    }
+
+    @Then("credit accounts table should have following columns")
+    public void creditAccountsTableShouldHaveFollowingColumns(List<String > expcreditOp) {
+
+        List<String > actCreditAc=BrowserUtils.getElementsText(accountsummaryPage.creditAccountColumns_loc);
+
+        Assert.assertEquals(expcreditOp,actCreditAc);
+
 
 
     }
